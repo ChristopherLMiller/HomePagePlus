@@ -23,7 +23,7 @@
     ],
 
     "background": {
-        "scripts": ["js/background.js"]
+        "scripts": ["js/background.min.js"]
     },
 
     "browser_action": {
