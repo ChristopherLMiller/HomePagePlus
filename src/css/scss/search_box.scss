@@ -1,0 +1,40 @@
+.search-box {
+    display: none;
+    max-width: 400px;
+    height: 48px;
+    background-color: $white;
+    border-radius: 2px;
+    opacity: 0.7 !important;
+    color: $faint-gray;
+    font-size: 18pt;
+    font-family: $raleway;
+
+    input[type="text"]:focus {
+        outline: none;
+    }
+
+    input[type="text"] {
+        font-size: 18pt;
+        padding: 10px 0;
+        border: none;
+        width: calc(100% - 48px);
+        text-indent: 10px;
+    }
+
+    button {
+        border: none;
+        background: $white;
+        color: $faint-gray;
+        outline: none;
+        width: 48px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+    }
+
+    input:focus + button {
+        color: $blue;
+        transition: color 0.33s;
+        transition-delay: 0.25s;
+    }
+}

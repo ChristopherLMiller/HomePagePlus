@@ -1,0 +1,12 @@
+body {
+    //background: fixed url('../img/default.jpg') center no-repeat cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(../img/default.jpg);
+    height: 100vh;
+}

@@ -1,0 +1,15 @@
+.overlay {
+    width: 230px;
+    opacity: 0.7;
+    font-family: $lato;
+    text-align: center;
+    color: $darker-grey;
+    margin: 10px 10px 0 10px;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+
+    &:first-child {
+        margin-top: 10px;
+    }
+}

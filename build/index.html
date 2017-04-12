@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Tab</title>
+        <link rel='stylesheet' href='css/weather-icons.min.css'/>
+        <link rel='stylesheet' href='css/weather-icons-wind.min.css' />
+        <link rel='stylesheet' href='css/owfont-regular.css' />
+        <link rel='stylesheet' href='css/font-awesome.min.css' />
+        <link rel='stylesheet' href='css/font-awesome-animation.min.css' />
+        <link rel='stylesheet' href='css/animate.css' />
+        <link rel='stylesheet' href='css/amaran.min.css' />
+        <link rel='stylesheet' href='css/styles.css' />
+        <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Bad+Script|raleway|lato" >
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+            <nav>
+            </nav>
+
+            <main>
+                <div class='content'>
+                    <div class='search-box animated flipInX'>
+                        <input type='text' id='search_input' name='search' placeholder="Search Google..." />
+                        <button id='search_button' class='fa fa-search' />
+                    </div>
+                    <div class='quote'>
+                        <p id='quote-text' class='text animated fadeInUp'></p>
+                        <p id='quote-author' class='author animated fadeInLeft'></p>
+                    </div>
+                </div>
+
+                <div class='sidebar'>
+                    <div id='digital_clock' class='overlay section animated slideInRight'>
+                        <h1>--:--</h1>
+                    </div>
+                    <div id='analog_clock' class='overlay section animated slideInRight'>
+                        <div class='top'></div>
+                        <div class='right'></div>
+                        <div class='bottom'></div>
+                        <div class='left'></div>
+                        <div class='center'></div>
+                        <div class='shadow'></div>
+                        <div class='hour'></div>
+                        <div class='minute'></div>
+                        <div class='second'></div>
+                    </div>
+                    <div id='weather' class='overlay animated slideInRight'>
+                        <div class='header section'>
+                            <h1 id='location'></h1>
+                        </div>
+                        <div class='icon section'>
+                            <i id='icon' class="owf"></i>
+                        </div>
+                        <div class='flipper-container'>
+                            <div class='flipper'>
+                                <div class='front section'>
+                                    <h2 id='temperature'>--</h2>
+                                    <i id='wind' class='wi wi-fw'></i>
+                                </div>
+                                <div class='back section'>
+                                    <ul>
+                                        <li id='1'>
+                                            <span></span>
+                                            <i class='wi wi-fw'></i>
+                                            <p></p>
+                                        </li>
+                                        <li id='2'>
+                                            <span></span>
+                                            <i class='wi wi-fw'></i>
+                                            <p></p>
+                                        </li>
+                                        <li id='3'>
+                                            <span></span>
+                                            <i class='wi wi-fw'></i>
+                                            <p></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!--optionsModal-->
+            <div id="optionsModal">
+                <div class='modalContainer'>
+                    <div class='modalHeader'>
+                        <h1>HomePage+ Options</h1>
+                        <p id='version'></p>
+                    </div>
+                    <div class='modalContent'>
+                        <fieldset>
+                            <legend>General Settings</legend>
+
+                            <div class='option_element active'>
+                                <div class='option_element_label'>
+                                    <label for='options_search_enable'>Enable Search Box</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <label class='switch'><input type='checkbox' id='searchEnable' name='options_search_enable' checked='checked' value='true' /><div class='slider'><p class='on'>ON</p><p class='off'>OFF</p></div></label>
+                                </div>
+                            </div>
+
+                            <div class='option_element'>
+                                <div class='option_element_label'>
+                                    <label for='options_search_engine'>Search Engine</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <select name='searchEngine' id='searchEngine' value='Google'><option value='Google'>Google</option><option value='Bing'>Bing</option><option value='Yahoo!'>Yahoo!</option></select>
+                                </div>
+                            </div>
+
+                            <div class='option_element active'>
+                                <div class='option_element_label'>
+                                    <label for='options_quote_enable'>Enable Quote</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <label class='switch'><input type='checkbox' id='quoteEnable' name='options_quote_enable' checked='checked' value='true' /><div class='slider'><p class='on'>ON</p><p class='off'>OFF</p></div></label>
+                                </div>
+                            </div>
+
+                            <div class='option_element active'>
+                                <div class='option_element_label'>
+                                    <label for='options_options_color'>Options Menu Color</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <label class='color'><input type='color' id='optionsColor' name='options_options_color' /></label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Navigation Bar</legend>
+
+                            <div class='option_element active'>
+                                <div class='option_element_label'>
+                                    <label for='options_nav_color'>Background Color</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <label class='color'><input type='color' id='navColor' name='options_nav_color' /></label>
+                                </div>
+                            </div>
+
+                            <div class='option_element active'>
+                                <div class='option_element_label'>
+                                    <label for='options_nav_links'>Links</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <select multiple name='options_nav_links' id='navLinks'>
+                                        <option data-link='https://500px.com' value='500px'>500px</option>
+                                        <option data-link='https://amazon.com' value='Amazon'>Amazon</option>
+                                        <option data-link='http://angellist.co' value='AngelList'>AngelList</option>
+                                        <option data-link='https://apple.com' value='Apple'>Apple</option>
+                                        <option data-link='https://bandcamp.com/' value='Bandcamp'>Bandcamp</option>
+                                        <option data-link='https://behance.net' value='Behance'>Behance</option>
+                                        <option data-link='https://bitbucket.org' value='Bitbucket'>Bitbucket</option>
+                                        <option data-link='https://codepen.io' value='CodePen'>codePen</option>
+                                        <option data-link='https://del.icio.us' value='Delicious'>Delicious</option>
+                                        <option data-link='https://deviantart.com' value='DeviantArt'>DeviantArt</option>
+                                        <option data-link='https://digg.com' value='Digg'>Digg</option>
+                                        <option data-link='https://dribbble.com' value='Dribbble'>Dribbble</option>
+                                        <option data-link='https://dropbox.com' value='Dropbox'>Dropbox</option>
+                                        <option data-link='https://etsy.com' value='Etsy'>Etsy</option>
+                                        <option data-link='https://facebook.com' value='Facebook'>Facebook</option>
+                                        <option data-link='https://flickr.com' value='Flickr'>Flickr</option>
+                                        <option data-link='https://foursquare.com' value='Foursquare'>Foursquare</option>
+                                        <option data-link='https://www.freecodecamp.com/' value='free-code-camp'>Free Code Camp</option>
+                                        <option data-link='https://getpocket.com' value='Get-Pocket'>Pocket</option>
+                                        <option data-link='https://github.com' value='GitHub'>GitHub</option>
+                                        <option data-link='https://gitlab.com' value='GitLab'>GitLab</option>
+                                        <option data-link='https://glide.me' value='Glide'>Glide</option>
+                                        <option data-link='https://google.com' value='google'>Google</option>
+                                        <option data-link='https://plus.google.com' value='Google-Plus'>Google+</option>
+                                        <option data-link='https://gratipay.com/' value='gratipay'>Gratipay</option>
+                                        <option data-link='https://news.ycombinator.com' value='Hacker-News'>Hacker-News</option>
+                                        <option data-link='https://houzz.com' value='Houzz'>Houzz</option>
+                                        <option data-link='https://imdb.com' value='imdb'>IMDB</option>
+                                        <option data-link='https://instagram.com' value='Instagram'>Instagram</option>
+                                        <option data-link='https://jsfiddle.net' value='JSFiddle'>JSFiddle</option>
+                                        <option data-link='http://last.fm' value='LastFm'>LastFm</option>
+                                        <option data-link='https://leanpub.com' value='Leanpub'>Leanpub</option>
+                                        <option data-link='https://linkedin.com' value='LinkedIn'>LinkedIn</option>
+                                        <option data-link='https://medium.com' value='Medium'>Medium</option>
+                                        <option data-link='https://www.meetup.com/' value='meetup'>Meetup</option>
+                                        <option data-link='https://mixcloud.com' value='mixcloud'>mixcloud</option>
+                                        <option data-link='https://paypal.com' value='paypal'>paypal</option>
+                                        <option data-link='https://pinterest.com' value='pinterest-p'>pinterest</option>
+                                        <option data-link='https://producthunt.com' value='product-hunt'>product hunt</option>
+                                        <option data-link='https://www.quora.com/' value='quora'>Quora</option>
+                                        <option data-link='https://reddit.com' value='reddit-alien'>reddit</option>
+                                        <option data-link='https://scribd.com' value='scribd'>scribd</option>
+                                        <option data-link='https://skype.com' value='skype'>skype</option>
+                                        <option data-link='https://slack.com' value='slack'>slack</option>
+                                        <option data-link='https://slideshare.net' value='slideshare'>slideshare</option>
+                                        <option data-link='https://snapchat.com' value='snapchat-ghost'>snapchat</option>
+                                        <option data-link='https://soundcloud.com' value='soundcloud'>soundcloud</option>
+                                        <option data-link='https://spotify.com' value='spotify'>spotify</option>
+                                        <option data-link='https://stackoverflow.com' value='stack-overflow'>stack overflow</option>
+                                        <option data-link='http://steampowered.com' value='steam'>steam</option>
+                                        <option data-link='https://stumbleupon.com' value='stumbleupon'>stumbleupon</option>
+                                        <option data-link='https://trello.com' value='trello'>trello</option>
+                                        <option data-link='https://tripadvisor.com' value='tripadvisor'>tripadvisor</option>
+                                        <option data-link='https://tumblr.com' value='tumblr'>tumblr</option>
+                                        <option data-link='https://twitch.tv' value='twitch'>twitch</option>
+                                        <option data-link='https://twitter.com' value='twitter'>twitter</option>
+                                        <option data-link='https://vimeo.com' value='vimeo'>vimeo</option>
+                                        <option data-link='https://vine.co' value='vine'>vine</option>
+                                        <option data-link='https://wechat.com' value='wechat'>wechat</option>
+                                        <option data-link='https://whatsapp.com' value='whatsapp'>whatsapp</option>
+                                        <option data-link='https://wikipedia.org' value='wikipedia-w'>wikipedia</option>
+                                        <option data-link='https://microsoft.com' value='windows'>microsoft</option>
+                                        <option data-link='https://wordpress.com' value='wordpress'>wordpress</option>
+                                        <option data-link='https://yahoo.com' value='yahoo'>yahoo</option>
+                                        <option data-link='https://yelp.com' value='yelp'>yelp</option>
+                                        <option data-link='https://yoast.com' value='yoast'>yoast</option>
+                                        <option data-link='https://youtube.com' value='youtube-play'>YouTube</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Clock Widget</legend>
+
+                            <div class='option_element active'>
+                                <div class='option_element_label'>
+                                    <label for='options_clock_enable'>Enable</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <label class='switch'><input type='checkbox' id='clockEnable' name='options_clock_enable' checked='checked' value='true'/><div class='slider'><p class='on'>ON</p><p class='off'>OFF</p></div></label>
+                                </div>
+                            </div>
+
+                            <div class='option_element'>
+                                <div class='option_element_label'>
+                                    <label for='options_clock_type'>Type</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <select id='clockType' name='options_clock_type' value='analog'><option value='analog'>Analog</option><option value='digital'>Digital</option></select>
+                                </div>
+                            </div>
+
+                            <div class='option_element'>
+                                <div class='option_element_label'>
+                                    <label for='options_clock_format'>Format (12/24 Hour)</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <select id='clockFormat' name='options_clock_format' value='12'><option value='12'>12</option><option value='24'>24</option></select>
+                                </div>
+                            </div>
+
+                            <div class='option_element'>
+                                <div class='option_element_label'>
+                                    <label for='options_clock_toggle'>toggle 12/24</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <label class='switch'><input type='checkbox' id='clockToggle' name='options_clock_toggle' checked='checked'/><div class='slider'><p class='on'>ON</p><p class='off'>OFF</p></div></label>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <fieldset>
+                            <legend>Weather Widget</legend>
+
+                            <div class='option_element active'>
+                                <div class='option_element_label'>
+                                    <label for='options_weather_enable'>Enable Weather</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <label class='switch'><input type='checkbox' id='weatherEnable' name='options_clock_toggle' value='true' checked='checked'/><div class='slider'><p class='on'>ON</p><p class='off'>OFF</p></div></label>
+                                </div>
+                            </div>
+
+                            <div class='option_element'>
+                                <div class='option_element_label'>
+                                    <label for='options_weather_units'>Units</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <select id='weatherUnits' name='options_weather_units' value='F'><option value='F'>F</option><option value='C'>C</option></select>
+                                </div>
+                            </div>
+
+                            <div class='option_element'>
+                                <div class='option_element_label'>
+                                    <label for='options_weather_app_id'>OpenWeather API Key</label>
+                                </div>
+                                <div class='option_element_input'>
+                                    <input type='text' name="options_weather_app_id" id="weatherAppId" />
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </div>
+                    <div class='modalFooter'>
+                        <button id='save_settings' class='save'><i class='fa fa-check'></i> SAVE CHANGES</button>
+                        <button id='close_settings' class='close-optionsModal close'><i class='fa fa-close'></i> CLOSE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class='buttons'>
+                <a id='modal' href='#optionsModal'><i class='fa fa-cog fa-3x faa-spin animated-hover'></i></a>
+                <a id='refresh'><i class='fa fa-refresh fa-3x faa-spin animated-hover'></i></a>
+            </div>
+
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/animatedModal.min.js"></script>
+        <script src='js/jquery.amaran.min.js'></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

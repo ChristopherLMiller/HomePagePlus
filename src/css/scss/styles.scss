@@ -1,0 +1,149 @@
+// Main entry point
+@import 'components/colors';
+@import 'components/fonts';
+@import 'body';
+@import 'navigation';
+@import 'main';
+.buttons {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.buttons a {
+    color: #eee;
+    margin: 0 5px;
+}
+
+.overlay .header h1 {
+    text-transform: uppercase;
+    padding: 10px;
+    margin: 0;
+}
+
+.overlay .icon {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #9e9e9e;
+}
+
+.overlay .icon i {
+    font-size: 12em;
+    line-height: 1.5em;
+}
+
+.overlay .section,
+.flipper-container {
+    width: 100%;
+    float: left;
+    height: 80px;
+}
+
+.overlay .section,
+.section {
+    background: $white;
+}
+
+.section ul {
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.section ul li {
+    float: left;
+    text-transform: uppercase;
+    width: 33%;
+    height: 100%;
+}
+
+.section ul li span {
+    width: 100%;
+    float: left;
+    font-size: 12pt;
+    padding: 3px 0;
+}
+
+.section ul li i {
+    text-align: center;
+    float: left;
+    font-size: 28pt;
+    width: 100%;
+    padding-top: 5px;
+}
+
+.overlay .section h2 {
+    font-size: 28pt;
+    width: 48%;
+    float: left;
+    margin-top: 20px;
+    padding-left: 4px;
+    border-right: 2px solid #9e9e9e;
+}
+
+.overlay .section h2:after {
+    content: '\00b0';
+}
+
+.overlay .section #wind {
+    float: left;
+    width: 49%;
+    font-size: 30pt;
+    margin-top: 20px;
+}
+
+.header {
+    min-height: 48px;
+}
+
+.icon {
+    min-height: 226px;
+}
+
+.section ul li p {
+    font-size: 24pt;
+    padding-left: 10px;
+}
+
+.section ul li i,
+.section ul li p {
+    display: none;
+}
+
+.section ul li p:after {
+    content: '\00b0';
+}
+
+.active {
+    display: block !important;
+}
+
+.disabled {
+    opacity: 0.7;
+}
+
+.option_element {
+    display: none;
+    height: 38px;
+}
+
+.option_element_label {
+    width: 68%;
+    line-height: 38px;
+    float: left;
+    text-align: right;
+    margin-right: 2%;
+}
+
+.option_element_input {
+    width: 30%;
+    float: left;
+    text-align: left;
+    line-height: 38px;
+}
+
+.option_element_input .switch {
+    margin: 4px 0 -8px 0;
+}
+
+@import 'modal';

@@ -1,0 +1,143 @@
+#digital_clock {
+    display: none;
+
+    h1 {
+        font-size:47pt;
+        margin: 4px auto;
+    }
+}
+
+#analog_clock {
+    display: none;
+    height: 210px;
+    width: 210px;
+    border: 10px solid;
+    overflow:hidden;
+
+    .top {
+        position: absolute;
+        width: 3px;
+        height: 9px;
+        background: $darker-grey;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .right {
+        position: absolute;
+        width: 9px;
+        height: 3px;
+        background: $darker-grey;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto 0;
+    }
+
+    .bottom {
+        position: absolute;
+        width: 3px;
+        height: 9px;
+        background: $darker-grey;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .left {
+        position: absolute;
+        width: 9px;
+        height: 3px;
+        background: $darker-grey;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+
+    .center {
+        height:6px;
+        width:6px;
+        left:0;
+        right:0;
+        bottom:0;
+        top:0;
+        margin:auto;
+        background: #262626;
+        border-radius: 100%;
+        position: absolute;
+        z-index:1;
+    }
+
+    .shadow {
+        height: 269px;
+        width: 300px;
+        position: absolute;
+        left: 65px;
+        top: 65px;
+        transform: rotate(135deg);
+        background: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.1));
+    }
+
+
+    .hour {
+        width: 3px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+
+        &:before {
+            position: absolute;
+            content: "";
+            background: #262626;
+            height: 50px;
+            width: 3px;
+            top: 55px;
+            left: 0;
+        }
+    }
+
+    .minute {
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+        &:before {
+            position: absolute;;
+            content: "";
+            background: #262626;
+            height: 65px;
+            width: 1px;
+            top: 40px;
+            left: 0;
+        }
+    }
+
+    .second {
+        width: 2px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+        &:before {
+            position: absolute;
+            content: "";
+            background: #fd1111;
+            height: 75px;
+            width: 2px;
+            top: 30px;
+            left: 0;
+        }
+    }
+
+}

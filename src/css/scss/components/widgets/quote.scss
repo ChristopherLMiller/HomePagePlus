@@ -1,0 +1,28 @@
+.quote {
+    position: relative;
+    max-width: 500px;
+    margin: 8% auto;
+    display: none;
+}
+
+.quote .text {
+    font-family: 'Bad Script', cursive;
+    color: #424242;
+    font-size: 24pt;
+    margin: 0;
+}
+
+.quote .author {
+    font-family: 'raleway', sans-serif;
+    font-size: 18pt;
+    color: #424242;
+    text-align: right;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0;
+    -webkit-animation-delay: 1.33s;
+}
+
+.quote .author:before {
+    content: '- ';
+}

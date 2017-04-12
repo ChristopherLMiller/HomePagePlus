@@ -1,0 +1,26 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    -webkit-animation: slideInDown 0.5s;
+}
+
+nav a {
+    margin: 10px;
+    height: 60px;
+    width: 60px;
+}
+
+nav a i {
+    border: 2px solid #ccc;
+    padding: 5px;
+    border-radius: 3px;
+    color: #ccc;
+    width: 50px;
+    text-align: center;
+}
+
+nav a:hover {
+    -webkit-animation: pulse 1s infinite;
+}
