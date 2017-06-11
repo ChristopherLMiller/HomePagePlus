@@ -388,9 +388,9 @@ var getWeather = function() {
     console.log('Updating weather');
 
     currentTimestamp = + new Date();
-    //if (currentTimestamp > weatherTimestamp + 600000) || $.isEmptyObject(weather)) {
+    if ( (currentTimestamp > weatherTimestamp + 600000) || $.isEmptyObject(weather) ) {
         weatherTimestamp = + new Date();
-        //saveTimestamp();
+        saveTimestamp();
 
         if (navigator.onLine) {
             // get the current weather
@@ -455,10 +455,10 @@ var getWeather = function() {
         } else {
             displayWeather();
         }
-    /*} else {
+    } else {
         // weather doesn't need refreshed, just display it
         displayWeather();
-    }*/
+    }
 }
 
 var displayWeather = function() {

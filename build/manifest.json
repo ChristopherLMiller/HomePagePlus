@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "HomePage+",
-    "version": "0.6.1",
+    "version": "0.6.2",
     "description": "New tab replacement, various widgets and components",
     "author": "Mooseman Studios",
     "short_name": "HP+",
